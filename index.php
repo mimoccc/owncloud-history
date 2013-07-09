@@ -26,5 +26,14 @@ OCP\App::checkAppEnabled('files_history');
 OCP\App::setActiveNavigationEntry('files_history');
 OCP\Util::addStyle('files_history', 'files_history');
 
+$history = array();
+$user = OC_User::getUser();
+$query = \OC_DB::prepare('SELECT `action`, `path`, `newpath`, `timestamp` FROM `*PREFIX*files_history` WHERE `uid` = ? ORDER BY `timestamp` DESC LIMIT 200');
+$history = $query->execute(array($user))->fetchAll();
+
+$list = new OCP\Template('files_history', 'part.list', '');
+$list->assign('history', $history);
+
 $tmpl = new OCP\Template('files_history', 'index', 'user');
+$tmpl->assign('historyList', $list->fetchPage());
 $tmpl->printPage();
