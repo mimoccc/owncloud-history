@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<info>
+	<id>files_history</id>
+	<name>History</name>
+	<description>Show recent events</description>
+	<version>0.2</version>
+	<licence>AGPL</licence>
+	<author>Nico Kaiser</author>
+	<require>5</require>
+  <types>
+    <filesystem/>
+  </types>
+</info>
