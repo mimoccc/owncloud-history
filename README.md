@@ -3,6 +3,8 @@ History app
 
 This repository provides a small plugin for ownCloud to enable change tracking for each user, like e.g. Dropbox does with the "Recent Events" page.
 
+![Screenshot](https://github.com/nicokaiser/owncloud-history/raw/master/img/screenshot.png)
+
 Maintainers:
 ------------
 - [Nico Kaiser](https://github.com/nicokaiser)
