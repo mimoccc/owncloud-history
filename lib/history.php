@@ -49,7 +49,7 @@ class History
         $uid = \OCP\User::getUser();
         \OCP\Util::writeLog('files_history', sprintf("'%s' added '%s'", $uid, $path), \OC_Log::INFO);
         
-        $query = \OCP\DB::prepare('INSERT INTO `*PREFIX*files_history` (`uid`, `action`, `timestamp`, `location`) VALUES (?, ?, ?, ?)');
+        $query = \OCP\DB::prepare('INSERT INTO `*PREFIX*files_history` (`uid`, `action`, `timestamp`, `path`) VALUES (?, ?, ?, ?)');
         $query->execute(array($uid, 'create', time(), $path));
     }
 
@@ -58,7 +58,7 @@ class History
         $uid = \OCP\User::getUser();
         \OCP\Util::writeLog('files_history', sprintf("'%s' edited '%s'", $uid, $path), \OC_Log::INFO);
         
-        $query = \OCP\DB::prepare('INSERT INTO `*PREFIX*files_history` (`uid`, `action`, `timestamp`, `location`) VALUES (?, ?, ?, ?)');
+        $query = \OCP\DB::prepare('INSERT INTO `*PREFIX*files_history` (`uid`, `action`, `timestamp`, `path`) VALUES (?, ?, ?, ?)');
         $query->execute(array($uid, 'write', time(), $path));
     }
 
@@ -67,7 +67,7 @@ class History
         $uid = \OCP\User::getUser();
         \OCP\Util::writeLog('files_history', sprintf("'%s' deleted '%s'", $uid, $path), \OC_Log::INFO);
 
-        $query = \OCP\DB::prepare('INSERT INTO `*PREFIX*files_history` (`uid`, `action`, `timestamp`, `location`) VALUES (?, ?, ?, ?)');
+        $query = \OCP\DB::prepare('INSERT INTO `*PREFIX*files_history` (`uid`, `action`, `timestamp`, `path`) VALUES (?, ?, ?, ?)');
         $query->execute(array($uid, 'delete', time(), $path));
     }
 
@@ -76,7 +76,7 @@ class History
         $uid = \OCP\User::getUser();
         \OCP\Util::writeLog('files_history', sprintf("'%s' renamed '%s' to '%s'", $uid, $oldpath, $newpath), \OC_Log::INFO);
 
-        $query = \OCP\DB::prepare('INSERT INTO `*PREFIX*files_history` (`uid`, `action`, `timestamp`, `location`) VALUES (?, ?, ?, ?)');
+        $query = \OCP\DB::prepare('INSERT INTO `*PREFIX*files_history` (`uid`, `action`, `timestamp`, `path`) VALUES (?, ?, ?, ?)');
         $query->execute(array($uid, 'rename', time(), $oldpath)); // $newpath
     }
 }

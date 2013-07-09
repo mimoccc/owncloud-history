@@ -29,7 +29,14 @@
 				<length>4</length>
 			</field>
 			<field>
-				<name>location</name>
+				<name>path</name>
+				<type>text</type>
+				<default></default>
+				<notnull>true</notnull>
+				<length>512</length>
+			</field>
+			<field>
+				<name>newpath</name>
 				<type>text</type>
 				<default></default>
 				<notnull>true</notnull>

@@ -24,6 +24,7 @@
 OCP\User::checkLoggedIn();
 OCP\App::checkAppEnabled('files_history');
 OCP\App::setActiveNavigationEntry('files_history');
+OCP\Util::addStyle('files_history', 'files_history');
 
 $tmpl = new OCP\Template('files_history', 'index', 'user');
 $tmpl->printPage();

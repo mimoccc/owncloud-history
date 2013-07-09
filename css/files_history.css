@@ -1,0 +1,14 @@
+#historytable { position: relative; top:37px; width:100%; }
+#historytable tbody tr { background-color:#fff; height:2.5em; }
+#historytable tbody tr:hover, 
+#historytable tbody tr:active {
+    background-color: rgb(240,240,240);
+}
+#historytable td {
+    padding: 0em 3em; background-position: 1em .5em; 
+    background-repeat: no-repeat;
+}
+#historytable td.history-date { text-align: right; }
+#historytable table th { height:2em; padding:0 .5em; color:#999; }
+#historytable table th, table td { border-bottom:1px solid #ddd; text-align:left; font-weight:normal; }
+#historytable table td { padding-left: 1em; border-bottom:1px solid #eee; font-style:normal; background-position:1em .5em; background-repeat:no-repeat; }
